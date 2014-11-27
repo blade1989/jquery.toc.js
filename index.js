@@ -27,7 +27,7 @@ Description : Automatic index
 function index() {
     var index =
         "<ul id=\"IndexJS\" style=\"display: block;\">" +
-        "<li id=\"tocid\">Table of Content <button id=\"closetoc\" onclick=\"closetoc()\">[-]</button>";
+        "<li id=\"tocid\">Table of Content <button id=\"closetoc\" onclick=\"closetoc()\">[-]</button></li>";
 
     // searches every tag you put in here
     $("h1, h2, h3, h4, h5, h6").each(function() {
