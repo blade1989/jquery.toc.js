@@ -22,57 +22,59 @@ Description : Automatic index
     2.  The script needs a `body` not `<body onload="onLoad()">`. 
         It will not work without!
 
+
+    3. You can comment out the tocstyle
+
+
 */
 
-function tocbutton() {
-    var tocbutton =
-        "<button onclick=\"index()\" id=\"toc\" title=\"Table Of Contents\">[+]</button>";
-    $("body").prepend(tocbutton);
+// function tocbutton() {
+//     var tocbutton =
+//         "<button onclick=\"index()\" id=\"toc\" title=\"Table Of Contents\">[+]</button>";
+//     $("article").prepend(tocbutton);
 
-    var style =
-        "<style id=\"tocbuttonstyle\">" +
-        "#closetoc, #toc {" +
-        "background-color: #eeeeee;" +
-        "border: 1px solid #cccccc;" +
-        "color: #454545;" +
-        "cursor: pointer;" +
-        "float: right;" +
-        "font-size: 15px;" +
-        "height: 25px;" +
-        "margin: 9px -3px 0 10px;" +
-        "padding: 2px;" +
-        "width: 25px;" +
-        "}" +
+//     var style =
+//         "<style id=\"tocbuttonstyle\">" +
+//         "#closetoc, #toc {" +
+//         "background-color: #eeeeee;" +
+//         "border: 1px solid #cccccc;" +
+//         "color: #454545;" +
+//         "cursor: pointer;" +
+//         "float: right;" +
+//         "font-size: 15px;" +
+//         "height: 25px;" +
+//         "margin: 9px -3px 0 10px;" +
+//         "padding: 2px;" +
+//         "width: 25px;" +
+//         "}" +
 
-        "#closetoc:hover, #toc:hover {" +
-        "background-color: #F9F9F9;" +
-        "border: 1px solid #000000;" +
-        "color: #000000;" +
-        "}" +
+//         "#closetoc:hover, #toc:hover {" +
+//         "background-color: #F9F9F9;" +
+//         "border: 1px solid #000000;" +
+//         "color: #000000;" +
+//         "}" +
 
-        "#toc {" +
-        "box-shadow: 0 1px 2px rgba(30, 25, 25, 0.2);" +
-        "-webkit-transition: all 500ms ease;" +
-        "transition: all 500ms ease;" +
-        "position: fixed;" +
-        "right: 15px;" +
-        "top: 5px;" +
-        "color: #454545;" +
-        "}" +
+//         "#toc {" +
+//         "box-shadow: 0 1px 2px rgba(30, 25, 25, 0.2);" +
+//         "-webkit-transition: all 500ms ease;" +
+//         "transition: all 500ms ease;" +
+//         "float: right;" +
+//         "right: 15px;" +
+//         "top: 5px;" +
+//         "color: #454545;" +
+//         "}" +
 
-        "#toc:active {" +
-        "outline: none;" +
-        "}" +
-        "</style>"
+//         "#toc:active {" +
+//         "outline: none;" +
+//         "}" +
+//         "</style>"
 
-    ;
-    $("head").prepend(style)
-
-
-}
+//     ;
+//     $("head").prepend(style)
+// }
 
 // load the function on page start
-window.onload = tocbutton;
+window.onload = index;
 
 // When clicked on the tocbutton, the following will be excecuted: 
 
@@ -104,9 +106,12 @@ function index() {
         "</li>" +
         "</ul>";
 
-   $("body").prepend(index);
+   $("article").prepend(index);
 
-    $('#toc').attr('style', 'display: none;');
+    //$('#toc').attr('style', 'display: none;');
+    $('#toc').remove();
+    $('#tocbuttonstyle').remove();
+
     var style =
         "<style id=\"indexstyle\">" +
         "#tocid {" +
@@ -123,9 +128,9 @@ function index() {
         "border: 1px solid #cccccc;" +
         "color: #454545;" +
         "font-size: 15px;" +
-        "margin: 0 0 10px 10px;" +
+        "margin: 10px 0 10px 10px;" +
         "padding: 15px 15px 15px 25px;" +
-        "position: fixed;" +
+        "float: right;" +
         "right: 15px;" +
         "text-align: left;" +
         "text-decoration: none;" +
@@ -211,7 +216,53 @@ function index() {
 
 function closetoc() {
     $("#IndexJS").remove();
-    $('#toc').attr('style', 'display: block;');
+
+
+
+
+    var tocbutton =
+        "<button onclick=\"index()\" id=\"toc\" title=\"Table Of Contents\">[+]</button>";
+    $("article").prepend(tocbutton);
+
+    var style =
+        "<style id=\"tocbuttonstyle\">" +
+        "#closetoc, #toc {" +
+        "background-color: #eeeeee;" +
+        "border: 1px solid #cccccc;" +
+        "color: #454545;" +
+        "cursor: pointer;" +
+        "float: right;" +
+        "font-size: 15px;" +
+        "height: 25px;" +
+        "margin: 9px -3px 0 10px;" +
+        "padding: 2px;" +
+        "width: 25px;" +
+        "}" +
+
+        "#closetoc:hover, #toc:hover {" +
+        "background-color: #F9F9F9;" +
+        "border: 1px solid #000000;" +
+        "color: #000000;" +
+        "}" +
+
+        "#toc {" +
+        "box-shadow: 0 1px 2px rgba(30, 25, 25, 0.2);" +
+        "-webkit-transition: all 500ms ease;" +
+        "transition: all 500ms ease;" +
+        "float: right;" +
+        "right: 15px;" +
+        "top: 5px;" +
+        "color: #454545;" +
+        "}" +
+
+        "#toc:active {" +
+        "outline: none;" +
+        "}" +
+        "</style>"
+
+    ;
+    $("head").prepend(style)
+
     $('h1, h2, h3, h4, h5, h6').removeAttr('id');
     $('style#indexstyle').remove();
 }
