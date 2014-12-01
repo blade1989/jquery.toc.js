@@ -23,61 +23,12 @@ Description : Automatic index
         It will not work without!
 
 
-    3. You can comment out the tocstyle
-
+    3. You can comment out the css styles to to let your css to style the index.
+        or you can modifie the style here to be more insync with the style you are using
 
 */
 
-// function tocbutton() {
-//     var tocbutton =
-//         "<button onclick=\"index()\" id=\"toc\" title=\"Table Of Contents\">[+]</button>";
-//     $("article").prepend(tocbutton);
-
-//     var style =
-//         "<style id=\"tocbuttonstyle\">" +
-//         "#closetoc, #toc {" +
-//         "background-color: #eeeeee;" +
-//         "border: 1px solid #cccccc;" +
-//         "color: #454545;" +
-//         "cursor: pointer;" +
-//         "float: right;" +
-//         "font-size: 15px;" +
-//         "height: 25px;" +
-//         "margin: 9px -3px 0 10px;" +
-//         "padding: 2px;" +
-//         "width: 25px;" +
-//         "}" +
-
-//         "#closetoc:hover, #toc:hover {" +
-//         "background-color: #F9F9F9;" +
-//         "border: 1px solid #000000;" +
-//         "color: #000000;" +
-//         "}" +
-
-//         "#toc {" +
-//         "box-shadow: 0 1px 2px rgba(30, 25, 25, 0.2);" +
-//         "-webkit-transition: all 500ms ease;" +
-//         "transition: all 500ms ease;" +
-//         "float: right;" +
-//         "right: 15px;" +
-//         "top: 5px;" +
-//         "color: #454545;" +
-//         "}" +
-
-//         "#toc:active {" +
-//         "outline: none;" +
-//         "}" +
-//         "</style>"
-
-//     ;
-//     $("head").prepend(style)
-// }
-
-// load the function on page start
-window.onload = index;
-
-// When clicked on the tocbutton, the following will be excecuted: 
-
+// When clicked on the tocbutton, the following will be excecuted:
 function index() {
     var index =
         "<ul id=\"IndexJS\" style=\"display: block;\">" +
@@ -199,26 +150,43 @@ function index() {
         "margin: -16px -1px 0px 0px;" +
         "}" +
 
-        "h1:target, h2:target, h3:target, h4:target, h4:target, h5:target, h6:target {" +
-        "animation: highlight 1s ease;" +
+        "h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {" +
+            "-webkit-animation: 2s ease 0s normal none 1 trgt;" +
+                    "animation: 2s ease 0s normal none 1 trgt;" +
+            "-webkit-transition: color 500ms ease 0s;" +
+                    "transition: color 500ms ease 0s;" +
         "}" +
 
-        "@keyframes highlight {" +
-        "from { background: yellow; }" +
-        "to { background: white; }" +
+        "@-webkit-keyframes trgt {" +
+            "0% {" +
+                "background: #ff3;" +
+            "}" +
+
+            "100% {" +
+                "background:#ffa;" +
+            "}" +
         "}" +
 
-        "</style>";
+        "@keyframes trgt {" +
+            "0% {" +
+                "background: #ff3;" +
+            "}" +
+
+            "100% {" +
+                "background:#ffa;"+ 
+            "}" +
+        "}" +
+            "</style>";
 
     $("head").prepend(style);
 
 }
 
+window.onload = index;
+
+
 function closetoc() {
     $("#IndexJS").remove();
-
-
-
 
     var tocbutton =
         "<button onclick=\"index()\" id=\"toc\" title=\"Table Of Contents\">[+]</button>";
