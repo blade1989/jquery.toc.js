@@ -15,7 +15,7 @@ When you don't want to display the ToC anymore, press the tocbutton: `[-]`. Noth
 #jquery.toc.full.js
 
 
-This also has the css in it. When added to your site, it will add a `style` tag in the `head` tag. Of cource these will also be cleaned up if not needed.
+This has the css in it. When added to your site, it will add a `style` tag in the `head` tag. Of cource these will also be cleaned up, when they are not needed!
 
 ##Browser support
 
