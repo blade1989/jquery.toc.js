@@ -1,4 +1,4 @@
 jquery.toc.js
 ========
 
-index.js, an automatic table of contents script
+jquery.toc.js, an automatic table of contents script
