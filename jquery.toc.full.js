@@ -64,118 +64,164 @@ function index() {
     $('#tocbuttonstyle').remove();
 
     var style =
-        "<style id=\"indexstyle\">" +
-        "#tocid {" +
-        "border-bottom: 1px solid #454545;" +
-        "list-style-type: none;" +
-        "margin: 0 0 0 -26px;" +
-        "padding: 0;" +
-        "text-align: center;" +
-        "width: 164px;" +
-        "}" +
+"#tocid {" +
+    "border-bottom: 1px solid #454545;" +
+    "list-style-type: none;" +
+    "text-align: center;" +
+    "width: 164px;" +
+    "margin: 0 0 0 -26px;" +
+    "padding: 0;" +
+"}" +
 
-        "#IndexJS {" +
-        "background-color: #f9f9f9;" +
-        "border: 1px solid #cccccc;" +
-        "color: #454545;" +
-        "font-size: 15px;" +
-        "margin: 10px 0 10px 10px;" +
-        "padding: 15px 15px 15px 25px;" +
-        "float: right;" +
-        "right: 15px;" +
-        "text-align: left;" +
-        "text-decoration: none;" +
-        "top: 10px;" +
-        "width: 165px;" +
-        "box-shadow: 0 1px 2px rgba(30, 25, 25, 0.2);" +
-        "}" +
+"#IndexJS {" +
+    "background-color: #f9f9f9;" +
+    "border: 1px solid #CCC;" +
+    "font-size: 15px;" +
+    "float: right;" +
+    "right: 15px;" +
+    "text-align: left;" +
+    "text-decoration: none;" +
+    "top: 10px;" +
+    "width: 165px;" +
+    "box-shadow: 0 1px 2px rgba(30,25,25,0.2);" +
+    "color: #454545;" +
+    "margin: 10px 0 10px 10px;" +
+    "padding: 15px 15px 15px 25px;" +
+    "-webkit-transition: all 500ms ease;" +
+       "-moz-transition: all 500ms ease;" +
+        "-ms-transition: all 500ms ease;" +
+         "-o-transition: all 500ms ease;" +
+            "transition: all 500ms ease;" +
+    "-webkit-box-sizing: border-box;" +
+       "-moz-box-sizing: border-box;" +
+            "box-sizing: border-box;" +
+"}" +
 
-        "#IndexJS li {" +
-        "white-space: normal;" +
-        "word-wrap: break-word;" +
-        "}" +
 
-        "#IndexJS li a {" +
-        " color: #454545;" +
-        "text-decoration: none;" +
-        "}" +
 
-        "#IndexJS li a:hover {" +
-        "text-decoration: underline;" +
-        "}" +
+"#IndexJS li {" +
+    "white-space: normal;" +
+    "word-wrap: break-word;" +
+"}" +
 
-        "#IndexJS {" +
-        "-webkit-transition: all 500ms ease;" +
-        "transition: all 500ms ease;" +
-        "color: #454545;" +
-        "-webkit-box-sizing: border-box;" +
-        "-moz-box-sizing: border-box;" +
-        "box-sizing: border-box;" +
-        "}" +
+"#IndexJS li a {" +
+    "color: #454545;" +
+    "text-decoration: none;" +
+"}" +
 
-        "#closetoc, #toc {" +
-        "background-color: #eeeeee;" +
-        "border: 1px solid #cccccc;" +
-        "color: #454545;" +
-        "cursor: pointer;" +
-        "float: right;" +
-        "font-size: 15px;" +
-        "height: 25px;" +
-        "margin: 9px -3px 0 10px;" +
-        "padding: 2px;" +
-        "width: 25px;" +
-        "}" +
 
-        "#closetoc:hover, #toc:hover {" +
-        "background-color: #F9F9F9;" +
-        "border: 1px solid #000000;" +
-        "color: #000000;" +
-        "}" +
 
-        "#toc {" +
-        "box-shadow: 0 1px 2px rgba(30, 25, 25, 0.2);" +
-        "-webkit-transition: all 500ms ease;" +
-        "transition: all 500ms ease;" +
-        "position: fixed;" +
-        "right: 15px;" +
-        "top: 3px;" +
-        "color: #454545;" +
-        "}" +
+"#IndexJS li a:hover {" +
+    "text-decoration:underline;" +
+"}" +
 
-        "#toc:active {" +
-        "outline: none;" +
-        "}" +
+"#closetoc, #toc {" +
+    "background-color: #EEE;" +
+    "border: 1px solid #CCC;" +
+    "color: #454545;" +
+    "cursor: pointer;" +
+    "float: right;" +
+    "font-size: 15px;" +
+    "height: 25px;" +
+    "width: 25px;" +
+    "margin: 9px -3px 0 10px;" +
+    "padding: 2px;" +
+"}" +
 
-        "#IndexJS #closetoc {" +
-        "margin: -16px -1px 0px 0px;" +
-        "}" +
+"#closetoc:hover, #toc:hover {" +
+    "background-color: #F9F9F9;" +
+    "border: 1px solid #000;" +
+    "color: #000;" +
+"}" +
 
-        "h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {" +
-            "-webkit-animation: 2s ease 0s normal none 1 trgt;" +
-                    "animation: 2s ease 0s normal none 1 trgt;" +
-            "-webkit-transition: color 500ms ease 0s;" +
-                    "transition: color 500ms ease 0s;" +
-        "}" +
+"#toc {" +
+    "position: fixed;" +
+    "box-shadow: 0 1px 2px rgba(30,25,25,0.2);" +
+    "float: right;" +
+    "right: 15px;" +
+    "top: 5px;" +
+    "color: #454545;" +
+    "-webkit-transition: all 500s ease;" +
+       "-moz-transition: all 500s ease;" +
+        "-ms-transition: all 500s ease;" +
+         "-o-transition: all 500s ease;" +
+            "transition: all 500s ease;" +
+"}" +
 
-        "@-webkit-keyframes trgt {" +
-            "0% {" +
-                "background: #ff3;" +
-            "}" +
+"#toc:active {" +
+    "outline: none;" +
+"}" +
 
-            "100% {" +
-                "background:#ffa;" +
-            "}" +
-        "}" +
+"#IndexJS #closetoc {" +
+    "margin: -16px -1px 0 0;" +
+"}" +
 
-        "@keyframes trgt {" +
-            "0% {" +
-                "background: #ff3;" +
-            "}" +
 
-            "100% {" +
-                "background:#ffa;"+ 
-            "}" +
-        "}" +
+
+"h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {" +
+    "-webkit-animation: 2s  ease 0s normal none 1 trgt;" +
+       "-moz-animation: 2s  ease 0s normal none 1 trgt;" +
+        "-ms-animation: 2s  ease 0s normal none 1 trgt;" +
+         "-o-animation: 2s  ease 0s normal none 1 trgt;" +
+            "animation: 2s  ease 0s normal none 1 trgt;" +
+    "-webkit-transition: color 500ms ease 0s;" +
+       "-moz-transition: color 500ms ease 0s;" +
+        "-ms-transition: color 500ms ease 0s;" +
+         "-o-transition: color 500ms ease 0s;" +
+            "transition: color 500ms ease 0s;" +
+"}" +
+
+"@-webkit-keyframes trgt {" +
+    "0% {" +
+        "background: #ff3; " +
+    "}" +
+
+    "100% {" +
+        "background:#ffa;" +
+    "}" +
+"}" +
+
+"@-moz-keyframes trgt {" +
+    "0% {" +
+        "background: #ff3; " +
+    "}" +
+
+    "100% {" +
+        "background:#ffa;" +
+    "}" +
+"}" +
+
+"@-ms-keyframes trgt {" +
+    "0% {" +
+        "background: #ff3; " +
+    "}" +
+
+    "100% {" +
+        "background:#ffa;" +
+    "}" +
+"}" +
+
+"@-o-keyframes trgt {" +
+    "0% {" +
+        "background: #ff3; " +
+    "}" +
+
+    "100% {" +
+        "background:#ffa;" +
+    "}" +
+"}" +
+
+"@keyframes trgt {" +
+    "0% {" +
+        "background: #ff3; " +
+    "}" +
+
+    "100% {" +
+        "background:#ffa;" +
+    "}" +
+"}"
+
+
             "</style>";
 
     $("head").prepend(style);
@@ -216,7 +262,10 @@ function closetoc() {
         "#toc {" +
         "box-shadow: 0 1px 2px rgba(30, 25, 25, 0.2);" +
         "-webkit-transition: all 500ms ease;" +
-        "transition: all 500ms ease;" +
+           "-moz-transition: all 500ms ease;" +
+            "-ms-transition: all 500ms ease;" +
+             "-o-transition: all 500ms ease;" +
+                "transition: all 500ms ease;" +
         "float: right;" +
         "right: 15px;" +
         "top: 5px;" +
