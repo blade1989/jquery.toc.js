@@ -64,6 +64,7 @@ function index() {
     $('#tocbuttonstyle').remove();
 
     var style =
+    "<style id=\"indexstyle\">" +
 "#tocid {" +
     "border-bottom: 1px solid #454545;" +
     "list-style-type: none;" +
