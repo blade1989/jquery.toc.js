@@ -27,7 +27,7 @@ Name        : Demo page for the automatic index jquery script!
 
 
             <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-            <script type="text/javascript" src="index.js"></script>
+            <script type="text/javascript" src="jquery.toc.full.js"></script>
 <style>
 body {
   background: #EEEEEE;
@@ -132,6 +132,15 @@ p {
     font-size: 15px;
 }
 
+a {
+    color: #4183c4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .checkmark {
     color: #008000;
     display: inline-block;
@@ -146,39 +155,90 @@ p {
     font-weight: 900;
 }
 
+code {
+    border: 1px dotted #CCCCCC;
+    background-color: #EEEEEE;
+    font-family: monospace;
+    color: #454545;
+    margin: 0px 5px;
+    padding: 0px 5px;
+    font-size: 13px;
+}
+
+blockquote {
+    border-left: 5px solid #CCCCCC;
+
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    background-color: #EEEEEE;
+    font-family: monospace;
+    color: #454545;
+    margin: 0px 10%;
+    padding: 2px 5px;
+    font-size: 13px;
+}
+
 </style>
 
     </head>
     <body>
 
         <article>
-          <h1>index.js</h1>
+          <h1>
+            <a href="https://github.com/blade1989/jquery.toc.js" title="github: blade1989/jquery.toc.js">jquery.toc.js</a>
+        </h1>
           
           <p>
             <a href="https://github.com/blade1989/index.js" title="GitHub: blade1989/index.js">index.js</a> , an automatic table of contents script, which uses <a href="http://jquery.com/" title="jQuery.com">jquery</a>.
         </p>  
           
-        <h2>Jquery script</h2>
-          
+        <h2>jquery.toc.js</h2>
+
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                jquery.toc.js, an automatic table of contents script. there is no css, for this, you will have the option to style it the way you want it.
             </p>
-          
+
+
+            <p>
+                The Table of Content will be put in the article tag, including tocbutton. You can change that by renaming the article tag to anything you want: body, div, span etc. Jquery allows selectors, such as div#toc, div.toc.
+            </p>
+
+
+            <p>
+                <a href="https://github.com/blade1989/jquery.toc.js/blob/master/jquery.toc.js#L58">
+                    <code>$("article").prepend(index);</code>
+                </a>, and also the tocbutton: 
+
+                <a href="https://github.com/blade1989/jquery.toc.js/blob/master/jquery.toc.js#L74">
+                    <code>$("article").prepend(tocbutton);</code>
+                </a>
+            </p>
+
+            <p>
+                When you don't want to display the ToC anymore, press the tocbutton: <code>[-]</code>. Nothing is <code>display: none;</code> but <code>.remove();</code>, or <code>.removeAttr</code>. It will remove the added <code>id=</code> to the headers, and the Table Of Content itself. and add the tocbutton: <code>[+]</code>. 
+            </p>
+
+            <h2>
+                <a href="https://github.com/blade1989/jquery.toc.js/blob/master/jquery.toc.full.js" title="GitHub: blade1989/jquery.toc.full.js">jquery.toc.full.js</a>
+            </h2>
+
+
+            <p>This has all the style needed and will load them in a style tag in the 
+                <code>head</code>. When the tocbutton is clicked <code>[+]</code>, it will add the needed css files and apply id's to the headers. When you click the tocbutton <code>[-]</code> it will remove everything, not onclick <code>display: none;</code> but onclick <code>.remove();</code>. or <code>removeAttr</code>, it cleans itself <strong>completely</strong>.</p>
+
           <h3>Browser support</h3>
           
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                This script is writen with the help of Jquery, so when when it comes to browsers support:
             </p>
+
+            <blockquote>
+                <i>
+                    Both versions 1.x and 2.x of jQuery support "current-1 versions" (meaning the current stable version of the browser and the version that preceded it) of Firefox, Google Chrome, Safari, and Opera. Version 1.x also supports Internet Explorer 6 or higher. However, jQuery version 2.x dropped Internet Explorer 6&ndash;8 support (which represents less than 28% of all browsers in use) and supports only IE 9 and later versions. 
+                    <a href="https://en.wikipedia.org/wiki/JQuery#Browser_support">jQuery #Browser support - Wikipedia, the free encyclopedia</a>.
+                </i>
+            </blockquote>
 
             <ul>
                 <li>Mozilla Firefox <span class="checkmark">&radic;</span></li>
@@ -193,110 +253,41 @@ p {
           <h4>Internet Explorer</h4>
           
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+               Tested it in IE8, no problems encountered.
             </p>
           
-          <h5>Licensing</h5>
-          
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          
+         
           <h6>Paragraphs support</h6>
 
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                I'm working on a more detailed jquery.toc.js, that includes paragraph support. In the future maybe more, if i can find out a way to incorporate them properly! 
             </p>
- 
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          
-          <h3>Submit bug reports</h3>
-          
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          
-          <h3>Submit fixes</h3>
-          
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+         
           
           <h3>Double headers names</h3>
           
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Double headers are not supported and not recommended! 
             </p>
           
           <h3>body not body onload="onLoad()" </h3>
           
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                If you edited the <code>.prepend</code> section, then you need to be exact. So, if typ in the <code>body</code> tag, it will search for exactly that, not <code>&lt;body onload="Onload"&gt;</code>.
             </p>
                       
-          <h3>Styling</h3>
-          
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            
+           
 
-<h2 style="border-bottom: 1px solid #454545;">Reference</h2>
-<ul>
-    <li>
-        <a href="http://css-tricks.com/automatic-table-of-contents/" title="Automatic Table of Contents | CSS-Tricks">css-tricks.com: Automatic Table of Contents | CSS-Tricks</a>
-    </li>
-    <li>
-        <a href="http://stackoverflow.com/q/27065444/1148529" title="How to troubleshoot the following js index script">stackoverflow.com: How to troubleshoot the following js index script</a>
-    </li>
-</ul>
+            <h2 style="border-bottom: 1px solid #454545;">Reference</h2>
+            
+            <ul>
+                <li>
+                    <a href="http://css-tricks.com/automatic-table-of-contents/" title="Automatic Table of Contents | CSS-Tricks">css-tricks.com: Automatic Table of Contents | CSS-Tricks</a>
+                </li>
+                <li>
+                    <a href="http://stackoverflow.com/q/27065444/1148529" title="How to troubleshoot the following js index script">stackoverflow.com: How to troubleshoot the following js index script</a>
+                </li>
+            </ul>
 
 
         </article>
