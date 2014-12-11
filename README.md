@@ -3,12 +3,9 @@
 
 jquery.toc.js, an automatic table of contents script. there is no css, for this, you will have the option to style it the way you want it. 
 
-everything will be put in the article tag:
-
 The Table of Content will be put in the `article` tag, including tocbutton. You can change that by renaming the `article` tag to anything you want: body, div, span etc. Jquery allows selectors, such as `div#toc`, `div.toc`.
 
- `$("article").prepend(index);`
-
+ [`$("article").prepend(index);`](https://github.com/blade1989/jquery.toc.js/blob/master/jquery.toc.js#L58), and alos the tocbutton: [`$("article").prepend(tocbutton);`](https://github.com/blade1989/jquery.toc.js/blob/master/jquery.toc.js#L74)
 
 When you don't want to display the ToC anymore, press the tocbutton: `[-]`. Nothing is `display: none;` but `.remove();`, or `.removeAttr`. It will remove the added `id=` to the headers, and the Table Of Content itself. and add the tocbutton: `[+]`. 
 
