@@ -1,6 +1,5 @@
 #jquery.toc.js
 
-
 jquery.toc.js, an automatic table of contents script. there is no css, for this, you will have the option to style it the way you want it. 
 
 The Table of Content will be put in the `article` tag, including tocbutton. You can change that by renaming the `article` tag to anything you want: body, div, span etc. Jquery allows selectors, such as `div#toc`, `div.toc`.
@@ -11,8 +10,7 @@ When you don't want to display the ToC anymore, press the tocbutton: `[-]`. Noth
 
 #jquery.toc.full.js
 
-
-This has the css in it. When added to your site, it will add a `style` tag in the `head` tag. Of cource these will also be cleaned up, when they are not needed!
+This has all the style needed and will load them in a style tag in the `head`. When the tocbutton is clicked `[+]`, it will add the needed css files and apply id's to the headers. When you click the tocbutton `[-]` it will remove everything, not onclick `display: none;` but onclick `.remove();`. or `removeAttr`, it cleans itself **completely**.
 
 ##Browser support
 
@@ -26,16 +24,13 @@ I'm working on a more detailed jquery.toc.js, that includes paragraph support. I
 
 ##Double Headers Names
 
-
 Double headers are not supported and not recommended! 
 
 ##body Not Body Onload="OnLoad()"
 
-
-if you want the index to load in the `body` tag, it will search for exactly that. Not `<body onload="Onload">`.
+If you edited the `.prepend` section then you need to be axact so if typ in the `body` tag, it will search for exactly that, not `<body onload="Onload">`.
 
 ##Reference
-
 
  - [css-tricks.com: Automatic Table of Contents | CSS-Tricks](http://css-tricks.com/automatic-table-of-contents/)
  - [stackoverflow.com: How to troubleshoot the following js index script](http://stackoverflow.com/q/27065444/1148529)
