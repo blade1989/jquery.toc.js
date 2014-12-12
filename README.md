@@ -28,7 +28,7 @@ Double headers are not supported and not recommended!
 
 ##body Not Body Onload="OnLoad()"
 
-If you edited the `.prepend` section, then you need to be exact. So, if typ in the `body` tag, it will search for exactly that, not `<body onload="Onload">`.
+If you edited the `.prepend` section, then you need to be exact. So, if you typ in the `body` tag, it will search for exactly that, not `<body onload="Onload">`.
 
 ##Reference
 
