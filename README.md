@@ -12,6 +12,10 @@ When you don't want to display the ToC anymore, press the tocbutton: `[-]`. Noth
 
 This has all the style needed and will load them in a style tag in the `head`. When the tocbutton is clicked `[+]`, it will add the needed css files and apply id's to the headers. When you click the tocbutton `[-]` it will remove everything, not onclick `display: none;` but onclick `.remove();`. or `removeAttr`, it cleans itself **completely**.
 
+##[Demo jquery.toc.js/](http://www.eurobytes.nl/demos/jquery.toc.js/)
+
+This real life demo displays what the current version(0.1) can do.
+
 ##Browser support
 
 This script is writen with the help of Jquery, so when when it comes to browsers support:
