@@ -34,6 +34,17 @@ Double headers are not supported and not recommended!
 
 If you edited the `.prepend` section, then you need to be exact. So, if you typ in the `body` tag, it will search for exactly that, not `<body onload="Onload">`.
 
+
+##Stable release
+
+After seing the LibreOffice - Writer Navigator, I have decided that I'm going to work towards that. and that will be version 1.0. There will be a name change from `jquery.toc.js` to `jquery.navigator.js`
+
+![EuroEditor - 0.0.4][1]
+
+
+  [1]: http://i.imgur.com/K5svgFl.png
+
+
 ##Reference
 
  - [css-tricks.com: Automatic Table of Contents | CSS-Tricks](http://css-tricks.com/automatic-table-of-contents/)
