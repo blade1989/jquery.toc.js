@@ -199,15 +199,21 @@ blockquote {
             </p>
 
 
-            <p>
-                <a href="https://github.com/blade1989/jquery.toc.js/blob/master/jquery.toc.js#L58">
-                    <code>$("article").prepend(index);</code>
-                </a>, and also the tocbutton: 
+            <ul class="codes">
+                <li><a href="https://github.com/blade1989/jquery.toc.js/blob/master/jquery.toc.js#L58">
+                        <code>$("article").prepend(index);</code>
+                    </a>
+                </li>
 
-                <a href="https://github.com/blade1989/jquery.toc.js/blob/master/jquery.toc.js#L74">
-                    <code>$("article").prepend(tocbutton);</code>
-                </a>
-            </p>
+                <li style="    list-style-type: none;
+    margin: 10px 0;
+    padding: 10px 0;">and also the tocbutton: </li>
+                
+                <li><a href="https://github.com/blade1989/jquery.toc.js/blob/master/jquery.toc.js#L74">
+                        <code>$("article").prepend(tocbutton);</code>
+                    </a>
+                </li>
+           </ul>
 
             <p>
                 When you don't want to display the ToC anymore, press the tocbutton: <code>[-]</code>. Nothing is <code>display: none;</code> but <code>.remove();</code>, or <code>.removeAttr</code>. It will remove the added <code>id=</code> to the headers, and the Table Of Content itself. and add the tocbutton: <code>[+]</code>. 
